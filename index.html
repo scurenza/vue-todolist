@@ -42,12 +42,8 @@
           <button @click="addTask">Invia</button>
         </div>
         <div class="list-container">
-          <ul>
-            <li
-              :class="tasks[index].isDone === true ? 'done' : ''"
-              v-for="(item, index) in tasks"
-              @click="cancelDoneTask( index )"
-            >
+          <ul v-for="(item, index) in tasks">
+            <li :class="item.isDone === true ? 'done' : ''">
               {{ item.task }}
               <div>
                 <span class="check" @click="doneTask( index )"

@@ -64,12 +64,7 @@ createApp({
         },
         deleteTask(index) {
             this.tasks.splice(index, 1);
-        },
-        cancelDoneTask(index) {
-            
-            if (this.tasks[index].isDone === true) {
-                this.tasks[index].isDone = false;
-        }}
+        }
 
     }
 }).mount("#app");
