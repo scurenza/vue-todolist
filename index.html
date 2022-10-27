@@ -8,8 +8,57 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
+    <div id="app">
+      <!-- HEADER -->
+      <header>
+        <h2>Cose da fare</h2>
+      </header>
+      <!-- /HEADER -->
+      <!-- MAIN -->
+      <div class="container">
+        <div class="input-container">
+          <label for="" class="hidden">Inserire un compito</label>
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Inserire una cosa da fare"
+          />
+          <button>Invia</button>
+        </div>
+        <div class="list-container">
+          <ul>
+            <li class="">
+              fare spesa
+              <div>
+                <span class="check"><i class="fa-solid fa-check"></i></span
+                ><span class="cancel"
+                  ><i class="fa-solid fa-trash-can"></i
+                ></span>
+              </div>
+            </li>
+            <li>fare es</li>
+            <li>andare in palestra</li>
+            <li>comprare regalo</li>
+            <li>fare spesa</li>
+            <li>fare es</li>
+            <li>andare in palestra</li>
+            <li>comprare regalo</li>
+          </ul>
+        </div>
+      </div>
+      <!-- /MAIN -->
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>
