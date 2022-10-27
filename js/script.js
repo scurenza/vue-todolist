@@ -14,3 +14,52 @@
 // 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 // 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 
+const { createApp } = Vue;
+
+createApp({
+    data () {
+        return {
+            newTask: {
+                task: "",
+                isDone: false
+            },
+            tasks: [
+                {
+                    task: "Fare l'esercizio",
+                    isDone: false,
+                },
+                {
+                    task: "Fare la spesa",
+                    isDone: false,
+                },
+                {
+                    task: "Allenarsi",
+                    isDone: false,
+                },
+                {
+                    task: "Comprare il regalo",
+                    isDone: false,
+                }
+            ]
+            
+        }
+    },
+    methods: {
+        addTask() {
+            if(this.newTask.task !== "") {
+                this.tasks.push({...this.newTask})
+                console.log("campo pieno");
+                this.newTask.task = "";
+            } else {
+                console.log("campo vuoto");
+            }
+        },
+        doneTask() {
+            this.tasks.isDone = true;
+            console.log("cliccato sul check");
+            console.log(this.tasks.isDone);
+            console.log(this.tasks);
+        }
+    }
+}).mount("#app");
+

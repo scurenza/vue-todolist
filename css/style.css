@@ -74,6 +74,10 @@ ul li{
     justify-content: space-between;
 }
 
+i {
+    cursor: pointer;
+}
+
 .list-container{
     width: 80%;
     min-height: 200px;
