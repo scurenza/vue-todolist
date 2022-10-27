@@ -36,19 +36,23 @@
             type="text"
             id="todo-input"
             placeholder="Inserire una cosa da fare"
-            v-model="newTask.task"
+            v-model.trim="newTask.task"
             @keyup.enter="addTask"
           />
           <button @click="addTask">Invia</button>
         </div>
         <div class="list-container">
           <ul>
-            <li class="" v-for="(item, index) in tasks">
+            <li
+              :class="{'done': (tasks[index].isDone === true)}"
+              v-for="(item, index) in tasks"
+              @click="cancelDoneTask( index )"
+            >
               {{ item.task }}
               <div>
-                <span class="check" @click="doneTask"
+                <span class="check" @click="doneTask( index )"
                   ><i class="fa-solid fa-check"></i></span
-                ><span class="cancel"
+                ><span class="cancel" @click="deleteTask( index )"
                   ><i class="fa-solid fa-trash-can"></i
                 ></span>
               </div>

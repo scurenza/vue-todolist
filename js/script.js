@@ -54,12 +54,22 @@ createApp({
                 console.log("campo vuoto");
             }
         },
-        doneTask() {
-            this.tasks.isDone = true;
-            console.log("cliccato sul check");
-            console.log(this.tasks.isDone);
-            console.log(this.tasks);
-        }
+        doneTask(index) {
+            if (this.tasks[index].isDone !== true) {
+                this.tasks[index].isDone = true;
+            } else{
+                this.tasks[index].isDone = false;
+            }
+            
+        },
+        deleteTask(index) {
+            this.tasks.splice(index, 1);
+        },
+        cancelDoneTask(index) {
+            if (this.tasks[index].isDone === true) {
+                this.tasks[index].isDone = false;
+        }}
+
     }
 }).mount("#app");
 
