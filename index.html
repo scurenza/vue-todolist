@@ -44,7 +44,7 @@
         <div class="list-container">
           <ul>
             <li
-              :class="{'done': (tasks[index].isDone === true)}"
+              :class="tasks[index].isDone === true ? 'done' : ''"
               v-for="(item, index) in tasks"
               @click="cancelDoneTask( index )"
             >
